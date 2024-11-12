@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     <h3 class="text-xl font-semibold mb-4">{{ $form->title }}</h3>
 
-                    <form action="#" method="POST">
+                    <form action="{{ route('form.submit', ['slug' => $form->slug]) }}" method="POST">
                         @csrf
                         <fieldset class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                             @foreach ($form->fields as $field)
@@ -42,7 +42,7 @@
                                         <div class="mt-2">
                                             @foreach (explode(',', $field->options) as $option)
                                                 <label class="inline-flex items-center mr-4">
-                                                    <input type="{{ $field->type }}" name="fields[{{ $field->id }}][]" value="{{ $option }}" class="form-checkbox" {{ $field->required ? 'required' : '' }}>
+                                                    <input type="{{ $field->type }}" name="fields[{{ $field->id }}][]" value="{{ $option }}" class="form-checkbox" />
                                                     <span class="ml-2">{{ $option }}</span>
                                                 </label>
                                             @endforeach

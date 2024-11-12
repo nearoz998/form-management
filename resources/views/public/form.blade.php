@@ -3,7 +3,7 @@
     @endguest
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Preview Form: ' . $form->title) }}
+            {{ __('Form: ' . $form->title) }}
         </h2>
     </x-slot>
 
@@ -44,7 +44,7 @@
                                         <div class="mt-2">
                                             @foreach (explode(',', $field->options) as $option)
                                                 <label class="inline-flex items-center mr-4">
-                                                    <input type="{{ $field->type }}" name="fields[{{ $field->id }}][]" value="{{ $option }}" class="form-checkbox" {{ $field->required ? 'required' : '' }}>
+                                                    <input type="{{ $field->type }}" name="fields[{{ $field->id }}][]" value="{{ $option }}" class="form-checkbox" />
                                                     <span class="ml-2">{{ $option }}</span>
                                                 </label>
                                             @endforeach
@@ -85,7 +85,7 @@
     @endauth
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Preview Form: ' . $form->title) }}
+            {{ __('Form: ' . $form->title) }}
         </h2>
     </x-slot>
 
@@ -126,7 +126,7 @@
                                         <div class="mt-2">
                                             @foreach (explode(',', $field->options) as $option)
                                                 <label class="inline-flex items-center mr-4">
-                                                    <input type="{{ $field->type }}" name="fields[{{ $field->id }}][]" value="{{ $option }}" class="form-checkbox" {{ $field->required ? 'required' : '' }}>
+                                                    <input type="{{ $field->type }}" name="fields[{{ $field->id }}][]" value="{{ $option }}" class="form-checkbox" />
                                                     <span class="ml-2">{{ $option }}</span>
                                                 </label>
                                             @endforeach
